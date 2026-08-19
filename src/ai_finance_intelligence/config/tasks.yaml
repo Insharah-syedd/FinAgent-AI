@@ -1,0 +1,96 @@
+collect_financial_information:
+  description: >
+    Organize the user's financial information provided through the input.
+
+    Review the user's monthly income, expenses, savings, spending
+    categories, financial goals, and uploaded CSV financial data.
+
+    User financial information:
+
+    Monthly income: {monthly_income}
+
+    Monthly expenses: {monthly_expenses}
+
+    Expense categories: {expense_categories}
+
+    Current savings: {current_savings}
+
+    Financial goal: {financial_goal}
+
+    Uploaded CSV financial data:
+
+    {csv_data}
+
+    If CSV data is provided, carefully identify the available columns,
+    financial records, categories, amounts, and relevant information.
+    Do not invent information that is not present in the input.
+
+  expected_output: >
+    A structured summary of the user's financial information including
+    income, expenses, savings, expense categories, financial goals,
+    uploaded CSV information, relevant spending records, and any
+    missing or unclear information.
+
+  agent: financial_researcher
+
+
+analyze_financial_health:
+  description: >
+    Analyze the financial information collected from the previous task.
+
+    Use the user's manually provided financial information and uploaded
+    CSV data when available.
+
+    Calculate and discuss the relationship between income and expenses,
+    estimate the user's monthly remaining amount when income and expense
+    information is available, identify major spending categories,
+    analyze spending patterns, evaluate savings behavior, and identify
+    financial improvement opportunities.
+
+    If CSV data is available, analyze the actual financial records
+    contained in the CSV, including relevant categories and amounts.
+
+    Do not invent financial information that was not provided by the user.
+    If important information is missing, clearly state that it is missing.
+
+  expected_output: >
+    A clear financial analysis containing income and expense observations,
+    estimated monthly remaining amount when possible, spending patterns,
+    category-level insights, savings observations, financial gaps,
+    and prioritized areas for improvement.
+
+  agent: financial_analyst
+
+
+create_financial_plan:
+  description: >
+    Create a practical personalized financial improvement plan using the
+    previous financial analysis.
+
+    Use the user's provided financial information and insights derived
+    from uploaded CSV data when available.
+
+    The plan should include budgeting recommendations, savings targets,
+    expense-reduction opportunities, financial priorities, short-term
+    goals, medium-term goals, and clear next steps.
+
+    Recommendations must be realistic and based only on the user's
+    provided information and the analysis produced by the previous tasks.
+
+    Do not promise guaranteed financial results or invent financial data.
+
+  expected_output: >
+    A polished personal finance action plan containing:
+
+    1. Financial summary
+    2. Spending analysis
+    3. Priority areas
+    4. Suggested budget improvements
+    5. Savings strategy
+    6. Expense reduction opportunities
+    7. Short-term goals
+    8. Medium-term goals
+    9. Clear next steps
+    10. General educational disclaimer
+
+  agent: financial_advisor

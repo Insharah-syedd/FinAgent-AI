@@ -1,0 +1,26 @@
+[project]
+name = "ai_finance_intelligence"
+version = "0.1.0"
+description = "ai_finance_intelligence using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=1.15.10,<2.0.0",
+    "streamlit>=1.61.1",
+]
+
+[project.scripts]
+ai_finance_intelligence = "ai_finance_intelligence.main:run"
+run_crew = "ai_finance_intelligence.main:run"
+train = "ai_finance_intelligence.main:train"
+replay = "ai_finance_intelligence.main:replay"
+test = "ai_finance_intelligence.main:test"
+run_with_trigger = "ai_finance_intelligence.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "44ecdca9-3959-4472-9aec-3d20e1f64320"
