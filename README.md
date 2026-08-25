@@ -1,4 +1,5 @@
 # FinAgent AI - Autonomous Financial Intelligence System
+# LIVE DEMO : https://finagent-ai.streamlit.app/
 
 FinAgent AI is an Agentic AI solution designed to automate financial data analysis, statistical reporting, and strategic budgeting insights. Built using CrewAI, Streamlit, and modern LLM integrations, it enables users to analyze financial CSV datasets or manual inputs through specialized autonomous AI agents.
 
