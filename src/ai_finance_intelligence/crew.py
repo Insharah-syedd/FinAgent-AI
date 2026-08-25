@@ -1,6 +1,19 @@
 import os
-from crewai import Agent, Crew, Process, Task, LLM
+
+from dotenv import load_dotenv
+from crewai import Agent, Crew, LLM, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+
+load_dotenv()
+
+
+def get_gemini_api_key() -> str:
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "Missing Gemini API key. Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment or .env file."
+        )
+    return api_key
 
 
 @CrewBase
@@ -10,11 +23,9 @@ class AiFinanceIntelligence:
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    # OpenRouter LLM setup
     llm = LLM(
-        model="openrouter/openai/gpt-3.5-turbo",
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.getenv("OPENROUTER_API_KEY"),
+        model="gemini/gemini-3.6-flash",
+        api_key=get_gemini_api_key(),
         temperature=0.2,
     )
 

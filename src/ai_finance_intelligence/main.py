@@ -39,6 +39,7 @@ def run():
         "expense_categories": expense_categories,
         "current_savings": current_savings,
         "financial_goal": financial_goal,
+        "csv_data": "",
     }
 
     try:

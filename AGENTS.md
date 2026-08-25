@@ -383,7 +383,7 @@ agent = Agent(llm=llm, ...)
 # Examples:
 #   "openai/gpt-4o"
 #   "anthropic/claude-sonnet-4-20250514"
-#   "google/gemini-2.0-flash"
+#   "google/gemini-2.5-flash"
 #   "ollama/llama3"
 #   "groq/llama-3.3-70b-versatile"
 #   "bedrock/anthropic.claude-3-sonnet-20240229-v1:0"
